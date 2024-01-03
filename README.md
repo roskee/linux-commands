@@ -13,3 +13,11 @@ current support is for Ubuntu.
   sudo journalctl --rotate // archive the logs to be non-writable
   sudo journalctl --vacuum-time=1s // delete the logs
   ```
+- resize your swap memory
+  ```shell
+  sudo swapoff -a
+  sudo fallocate -l 1G /swapfile // change 1G to any size you want
+  sudo chmod 600 /swapfile
+  sudo mkswap /swapfile
+  sudo swapon /swapfile
+  ```
